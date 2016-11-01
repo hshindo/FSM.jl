@@ -5,7 +5,7 @@ os:
     - osx
 
 julia:
-    - 0.4
+    - 0.5
     - nightly
 
 notifications:
@@ -19,7 +19,7 @@ install:
 
 script:
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
-  - julia -e 'Pkg.clone(pwd()); Pkg.build("TransitionParser"); Pkg.test("TransitionParser"; coverage=true)'
+  - julia -e 'Pkg.clone(pwd()); Pkg.build("Lattice"); Pkg.test("Lattice"; coverage=true)'
 
 after_success:
   #- julia -e 'Pkg.clone("https://github.com/MichaelHatherly/Documenter.jl")'
